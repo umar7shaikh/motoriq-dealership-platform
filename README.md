@@ -69,14 +69,8 @@ The API is a single Spring Boot service. Requests pass a JWT filter, hit a contr
 
 ## Screenshots
 
-Capture these three, save them under `screenshots/` with these names:
+![MotorIQ](screenshots/Screenshot%202026-07-14%20035815.png)
 
-- `screenshots/inventory.png` — the main screen after login: the stock list showing vehicles in inventory.
-- `screenshots/vehicle-finance.png` — a vehicle or sale detail that shows the money tracking (payments received and owed, any TCS or brokerage fields).
-- `screenshots/public-catalogue.png` — the public, buyer-facing catalogue or marketplace page (the unauthenticated view a customer would see).
+![MotorIQ](screenshots/Screenshot%202026-07-14%20035827.png)
 
-<!--
-![Inventory](screenshots/inventory.png)
-![Vehicle finance](screenshots/vehicle-finance.png)
-![Public catalogue](screenshots/public-catalogue.png)
--->
+![MotorIQ](screenshots/Screenshot%202026-07-14%20035907.png)
