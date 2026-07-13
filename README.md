@@ -59,13 +59,13 @@ The API is a single Spring Boot service. Requests pass a JWT filter, hit a contr
 - React 19, Vite, TanStack Query, React Router, Tailwind, Recharts
 - Vitest and Playwright on the frontend; GitHub Actions and Docker Compose
 
-## What is weak, and what I would change
+## On the roadmap
 
-- **No database-level tenant isolation.** This is the real gap. Isolation is enforced in application code only, so it depends on every query going through the scoped path. A Postgres RLS policy on the vendor column should sit behind it.
-- **Thin backend testing.** The automated tests are mostly on the React side. The Spring API has a large surface with little of its own test coverage, so the finance and isolation logic in particular are underprotected.
-- **No observability.** There is no structured logging, metrics, or tracing, and no error tracking. Debugging a production issue would mean reading raw logs.
-- **Secrets were committed early on** and have since been removed from the tree and rotated. The project needs a proper secrets story rather than env files near the repo.
-- **It is one large monolith.** Module boundaries are package conventions, not enforced, so nothing stops cross-module coupling from creeping in.
+- **Database-level tenant isolation.** Adding a Postgres row-level security policy on the vendor column so isolation sits on two independent layers, the app-scoped access path and the database, rather than the application alone.
+- **A backend test suite.** Focused first on the finance and isolation logic, the two places where a bug does the most damage.
+- **Observability.** Structured logging, metrics, and error tracking, so a production issue is something you can see rather than reconstruct from raw logs.
+- **A managed secrets story.** Moving configuration into a proper secrets manager.
+- **Firmer module boundaries** as the codebase grows, so the monolith stays easy to reason about.
 
 ## Screenshots
 
